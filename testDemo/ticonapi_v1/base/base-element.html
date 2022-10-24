@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/mtm.ico">
+    <link rel="stylesheet" type="text/css" href="../xiaoguo.css">
+    <title>Base Element</title>
+</head>
+<body>
+
+    <div style="width: 500px; height: 70px; background-color:chartreuse;
+     box-shadow:5px 5px 10px greenyellow;">
+     <h1 style="text-align:center; position: relative; 
+     font-size: larger; font-style:italic; padding: 23px;">MTM TiCon4 Base Element</h1>        
+    </div>
+
+    <div id="app_query">
+        <!-- 查询元素 -->
+        <p>
+            <br>
+            <input type="search" style="border:0;border-bottom:1px solid black; width:200px; height:24px; font-size: larger;" 
+            placeholder="input code" v-model="Code">
+            <button @click="QueryElementsByCode1" style="border-radius: 20px; border-color:white; font-size:larger; background-color: rgb(43, 252, 1);">simple search</button>
+            <button @click="QueryElementsByCode2" style="border-radius: 20px; border-color:white; font-size:larger; background-color: rgb(43, 252, 1);">complex query</button>
+            <button style="border-radius: 20px; border-color:white; font-size:large; background-color: rgb(43, 252, 1);"><a href="ticon://" class="tag">open TiCon</a></button>
+
+        </p>
+        <p id="AllQueryBaseElements" style="border: 0; font-size:normal; font-style:normal; font-weight: 700px;" 
+        class="frame">在上面输入待查元素的代码</p>
+    </div>
+
+    <!-- 通过 uid 删除元素 -->
+    <div id="app_delete">
+        <p>
+            <br>
+            <input id="deleteInput" type="text" style="border:0;border-bottom:1px solid black; width:200px; height:24px; font-size: larger;" 
+            placeholder="input elementUid" v-model="deleteUid">
+            <button @click="deleteElement" style="border-radius: 20px; border-color:white; font-size:larger; background-color: rgb(43, 252, 1);">delete</button>
+        </p>
+        <p id="deleteFlag" class="frame">在上面输入待删除元素的 elementUid</p>
+      </div>
+
+      <!-- 添加元素 -->
+    <div id="app_add">
+        <p>
+            <button @click="addElement" style="border-radius: 20px; border-color:white; font-size:larger; background-color: rgb(43, 252, 1);">add</button>
+        </p>
+      </div>
+
+    <!-- Import the development environment -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- The official website provides axios online address -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- Import js file -->
+    <script src="./query_base.js"></script>
+    <script src="./delete_base.js"></script>
+    <script src="./add_element.js"></script>
+</body>
+</html>
